@@ -1,5 +1,5 @@
-import user from "./assets/user.svg";
-import bot from "./assets/bot.svg";
+import bot from './assets/bot.svg'
+import user from './assets/user.svg'
 
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
@@ -73,7 +73,7 @@ const handleSubmit = async (e) => {
     // to clear the textarea input 
     form.reset()
 
-    // Ai chat section
+    // bot chat section
     const uniqueId = generateUniqueId()
     chatContainer.innerHTML += chatStripe(true, " ", uniqueId)
 
@@ -86,7 +86,7 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    const response = await fetch('http://localhost:5000', {
+    const response = await fetch('https://codex-im0y.onrender.com/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
